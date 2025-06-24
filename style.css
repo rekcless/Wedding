@@ -1,16 +1,15 @@
-/* style.css */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
   background-size: cover;
-  color: #2e3d30; /* hijau tua kalem */
+  color: #2e3d30;
   text-align: center;
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.85); /* putih transparan */
+  background-color: rgba(255, 255, 255, 0.88);
   padding: 40px 20px;
   margin: 50px auto;
   max-width: 500px;
@@ -19,29 +18,36 @@ body {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.3em;
   margin-bottom: 10px;
-  color: #3c5b4f; /* hijau olive */
+  color: #3c5b4f;
+  font-weight: 600;
+}
+
+.floral {
+  width: 120px;
+  margin: 20px 0;
 }
 
 .names {
-  font-size: 2em;
-  font-weight: bold;
-  color: #3e8e7e; /* hijau segar */
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8em;
+  font-weight: normal;
+  color: #3e8e7e;
   margin: 15px 0;
 }
 
 .date, .location {
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin: 5px 0;
-  color: #5e5e5e; /* abu-abu netral */
+  color: #5e5e5e;
 }
 
 .button {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 24px;
-  background-color: #6abf69; /* hijau cerah */
+  background-color: #6abf69;
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -50,7 +56,7 @@ h1 {
 }
 
 .button:hover {
-  background-color: #4e9e4d; /* hijau lebih tua saat hover */
+  background-color: #4e9e4d;
 }
 
 .closing {
