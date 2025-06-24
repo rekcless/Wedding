@@ -1,0 +1,57 @@
+/* style.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://images.unsplash.com/photo-1520333789090-1afc82db536a') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px 20px;
+  margin: 50px auto;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.names {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ffd1dc;
+  margin: 15px 0;
+}
+
+.date, .location {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #ff7eb9;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: #ff4e8e;
+}
+
+.closing {
+  margin-top: 30px;
+  font-style: italic;
+}
