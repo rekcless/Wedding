@@ -3,55 +3,58 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: url('https://images.unsplash.com/photo-1520333789090-1afc82db536a') no-repeat center center fixed;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
+  color: #2e3d30; /* hijau tua kalem */
   text-align: center;
 }
 
 .container {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.85); /* putih transparan */
   padding: 40px 20px;
   margin: 50px auto;
   max-width: 500px;
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 25px rgba(50, 50, 50, 0.2);
 }
 
 h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
+  color: #3c5b4f; /* hijau olive */
 }
 
 .names {
   font-size: 2em;
   font-weight: bold;
-  color: #ffd1dc;
+  color: #3e8e7e; /* hijau segar */
   margin: 15px 0;
 }
 
 .date, .location {
   font-size: 1.2em;
   margin: 5px 0;
+  color: #5e5e5e; /* abu-abu netral */
 }
 
 .button {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 24px;
-  background-color: #ff7eb9;
+  background-color: #6abf69; /* hijau cerah */
   color: white;
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #ff4e8e;
+  background-color: #4e9e4d; /* hijau lebih tua saat hover */
 }
 
 .closing {
   margin-top: 30px;
   font-style: italic;
+  color: #4f4f4f;
 }
