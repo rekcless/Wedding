@@ -1,66 +1,76 @@
 body {
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
-  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
-  background-size: cover;
-  color: #2e3d30;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+section {
+  padding: 40px 20px;
   text-align: center;
 }
 
-.container {
-  background-color: rgba(255, 255, 255, 0.88);
-  padding: 40px 20px;
-  margin: 50px auto;
-  max-width: 500px;
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(50, 50, 50, 0.2);
+.hero {
+  background: #f2e9e4;
+  color: #5e4b56;
+  padding: 60px 20px;
 }
 
-h1 {
-  font-size: 2.3em;
+.hero h1 {
+  font-size: 32px;
   margin-bottom: 10px;
-  color: #3c5b4f;
-  font-weight: 600;
 }
 
-.floral {
-  width: 120px;
-  margin: 20px 0;
-}
-
-.names {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.8em;
-  font-weight: normal;
-  color: #3e8e7e;
-  margin: 15px 0;
-}
-
-.date, .location {
-  font-size: 1.1em;
-  margin: 5px 0;
-  color: #5e5e5e;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #6abf69;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
+.countdown #timer {
+  font-size: 24px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  color: #2b2d42;
 }
 
-.button:hover {
-  background-color: #4e9e4d;
+.info, .doa, .guestbook {
+  background: #f9f9f9;
 }
 
-.closing {
-  margin-top: 30px;
-  font-style: italic;
-  color: #4f4f4f;
+.gallery .photos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #8d99ae;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+footer {
+  background: #2b2d42;
+  color: white;
+  padding: 20px;
 }
