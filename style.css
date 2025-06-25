@@ -1,20 +1,27 @@
+/* === Gaya Umum === */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background: #fff;
-  color: #333;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
+  background-size: cover;
+  color: #2e4d2e;
   line-height: 1.6;
 }
 
+/* === Seksi Umum === */
 section {
   padding: 40px 20px;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 20px;
+  border-radius: 10px;
 }
 
+/* === Hero / Header === */
 .hero {
-  background: #f2e9e4;
-  color: #5e4b56;
+  background-color: rgba(46, 77, 46, 0.85); /* Hijau tua transparan */
+  color: #fff;
   padding: 60px 20px;
 }
 
@@ -23,16 +30,19 @@ section {
   margin-bottom: 10px;
 }
 
+/* === Countdown === */
 .countdown #timer {
   font-size: 24px;
   font-weight: bold;
-  color: #2b2d42;
+  color: #2e4d2e;
 }
 
+/* === Info, Doa, Buku Tamu === */
 .info, .doa, .guestbook {
-  background: #f9f9f9;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
+/* === Galeri Foto === */
 .gallery .photos {
   display: flex;
   justify-content: center;
@@ -47,6 +57,7 @@ section {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* === Form Buku Tamu === */
 form {
   max-width: 400px;
   margin: auto;
@@ -61,16 +72,23 @@ input, textarea {
   border: 1px solid #ccc;
 }
 
+/* === Tombol Kirim === */
 button {
-  background: #8d99ae;
+  background: #2e4d2e;
   color: white;
   border: none;
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
+button:hover {
+  background: #3b6b3b;
+}
+
+/* === Footer === */
 footer {
-  background: #2b2d42;
+  background: #2e4d2e;
   color: white;
   padding: 20px;
 }
