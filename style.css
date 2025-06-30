@@ -170,22 +170,51 @@ section.show {
     font-family: 'Playfair Display', serif;
 }
 
-.hero .couple-names {
+/* Styling Nama Mempelai dan Orang Tua */
+.couple-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Jarak antara informasi pria dan wanita */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Agar responsif di mobile */
+}
+
+.groom-info,
+.bride-info {
+    flex: 1; /* Agar membagi ruang secara merata */
+    min-width: 250px; /* Lebar minimum sebelum wrap */
+    max-width: 350px;
+    padding: 15px;
+    background-color: #f9fff9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.couple-name {
     font-family: 'Playfair Display', serif;
-    font-size: 4.5em; /* Ukuran nama pengantin lebih besar */
+    font-size: 2.8em; /* Ukuran nama pengantin */
     color: #28a745;
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
     line-height: 1.1;
 }
 
-.hero .ampersand {
-    font-size: 0.8em; /* Ukuran '&' lebih kecil dari nama */
-    vertical-align: super;
-    margin: 0 10px;
-    color: #007f00;
+.parents-name {
+    font-size: 0.95em;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
 }
 
-.hero .intro-text {
+.and-symbol {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em; /* Ukuran simbol '&' */
+    color: #007f00;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.intro-text {
     font-size: 1.2em;
     color: #666;
     margin-bottom: 30px;
@@ -329,7 +358,6 @@ section.show {
     font-size: 1.2em; /* Ukuran tombol RSVP lebih besar */
 }
 
-
 /* Ucapan Section */
 .ucapan-form {
     max-width: 650px;
@@ -397,8 +425,25 @@ footer p {
         font-size: 1em;
     }
 
-    .hero .couple-names {
-        font-size: 3.5em;
+    .couple-details {
+        flex-direction: column; /* Ubah ke kolom di mobile */
+        gap: 20px;
+    }
+    .groom-info,
+    .bride-info {
+        min-width: unset; /* Reset min-width */
+        max-width: 100%;
+        padding: 10px;
+    }
+    .couple-name {
+        font-size: 2.2em; /* Kecilkan nama di mobile */
+    }
+    .parents-name {
+        font-size: 0.85em;
+    }
+    .and-symbol {
+        font-size: 2.5em; /* Kecilkan '&' di mobile */
+        margin: 10px 0;
     }
 
     .hero .intro-text {
@@ -474,11 +519,14 @@ footer p {
         border-radius: 15px;
     }
 
-    .hero .couple-names {
-        font-size: 2.8em;
+    .couple-name {
+        font-size: 1.8em; /* Lebih kecil lagi di mobile */
     }
-    .hero .ampersand {
-        margin: 0 5px;
+    .parents-name {
+        font-size: 0.8em;
+    }
+    .and-symbol {
+        font-size: 2em;
     }
 
     .hero .intro-text {
