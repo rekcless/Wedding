@@ -1,21 +1,26 @@
-// Countdown
-const targetDate = new Date("July 12, 2025 09:00:00").getTime();
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.section');
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+    const observerOptions = {
+        root: null, /* relative to the viewport */
+        rootMargin: '0px',
+        threshold: 0.1 /* 10% of the section must be visible to trigger */
+    };
 
-  if (distance < 0) {
-    document.getElementById("timer").innerHTML = "Acara telah berlangsung";
-    return;
-  }
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Optional: If you want the animation to run only once, uncomment next line
+                // observer.unobserve(entry.target);
+            } else {
+                // Optional: If you want the animation to reset when out of view, uncomment next line
+                // entry.target.classList.remove('is-visible');
+            }
+        });
+    }, observerOptions);
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const secs = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("timer").innerHTML = `${days} hari ${hours} jam ${mins} menit ${secs} detik`;
-}
-
-setInterval(updateCountdown, 1000);
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
