@@ -1,61 +1,102 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Undangan Pernikahan Islami</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Random</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header class="hero">
+        <div class="hero-content">
+            <p>The Wedding Of</p>
+            <h1>Bunga & Aditya</h1>
+            <p class="date-hero">Sabtu, 20 September 2025</p>
+            <a href="#invitation-details" class="btn">Buka Undangan</a>
+        </div>
+    </header>
 
-  <section class="hero">
-    <h1>Undangan Pernikahan</h1>
-    <h2>Muhammad & Aisyah</h2>
-    <p>Sabtu, 12 Juli 2025</p>
-  </section>
+    <main>
+        <section id="invitation-details" class="section details">
+            <div class="container">
+                <h2>Assalamualaikum Warahmatullahi Wabarakatuh</h2>
+                <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan putra-putri kami:</p>
 
-  <section class="countdown">
-    <h3>Menuju Hari Bahagia</h3>
-    <div id="timer">Loading...</div>
-  </section>
+                <div class="couple-info">
+                    <div class="groom">
+                        <h3>Aditya Pratama</h3>
+                        <p>Putra dari Bapak Budi Santoso & Ibu Ani Lestari</p>
+                    </div>
+                    <p class="and-symbol">&</p>
+                    <div class="bride">
+                        <h3>Bunga Lestari</h3>
+                        <p>Putri dari Bapak Joko Susilo & Ibu Siti Aminah</p>
+                    </div>
+                </div>
+                <p class="quote">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."</p>
+                <p class="quote-source">Q.S. Ar-Rum: 21</p>
+            </div>
+        </section>
 
-  <section class="info">
-    <h3>Informasi Acara</h3>
-    <p>📍 Masjid Agung Surakarta</p>
-    <p>🕰️ Akad: 09.00 WIB | Resepsi: 11.00 - 13.00 WIB</p>
-    <a href="https://maps.google.com" target="_blank">Lihat Lokasi</a>
-  </section>
+        <section id="event-details" class="section event">
+            <div class="container">
+                <h2>Detail Acara</h2>
+                <div class="event-card">
+                    <h3>Akad Nikah</h3>
+                    <p class="event-date">Jumat, 19 September 2025</p>
+                    <p class="event-time">09.00 WIB - Selesai</p>
+                    <p class="event-location">Masjid Agung Al-Falah, Jl. Raya Indah No. 10, Jakarta</p>
+                    <a href="https://maps.app.goo.gl/randommaplinkakad" target="_blank" class="btn-small">Lihat Peta</a>
+                </div>
+                <div class="event-card">
+                    <h3>Resepsi Pernikahan</h3>
+                    <p class="event-date">Sabtu, 20 September 2025</p>
+                    <p class="event-time">11.00 WIB - 17.00 WIB</p>
+                    <p class="event-location">Gedung Serbaguna Puri Indah, Jl. Harmoni No. 5, Jakarta</p>
+                    <a href="https://maps.app.goo.gl/randommaplinkresepsi" target="_blank" class="btn-small">Lihat Peta</a>
+                </div>
+                <p class="dresscode">Dress Code: Busana Formal Nuansa Pastel</p>
+            </div>
+        </section>
 
-  <section class="gallery">
-    <h3>Galeri Kami</h3>
-    <div class="photos">
-      <img src="https://via.placeholder.com/200x150" alt="Foto 1"/>
-      <img src="https://via.placeholder.com/200x150" alt="Foto 2"/>
-      <img src="https://via.placeholder.com/200x150" alt="Foto 3"/>
-    </div>
-  </section>
+        <section id="gallery" class="section gallery">
+            <div class="container">
+                <h2>Galeri Foto</h2>
+                <div class="gallery-grid">
+                    <img src="https://via.placeholder.com/300x200?text=Foto+1" alt="Foto Pernikahan 1">
+                    <img src="https://via.placeholder.com/300x200?text=Foto+2" alt="Foto Pernikahan 2">
+                    <img src="https://via.placeholder.com/300x200?text=Foto+3" alt="Foto Pernikahan 3">
+                    <img src="https://via.placeholder.com/300x200?text=Foto+4" alt="Foto Pernikahan 4">
+                    <img src="https://via.placeholder.com/300x200?text=Foto+5" alt="Foto Pernikahan 5">
+                    <img src="https://via.placeholder.com/300x200?text=Foto+6" alt="Foto Pernikahan 6">
+                </div>
+            </div>
+        </section>
 
-  <section class="doa">
-    <h3>Doa Untuk Kami</h3>
-    <blockquote>
-      “Barakallahu laka wa baraka 'alaika wa jama'a bainakuma fi khair.” <br />
-      <small>HR. Abu Dawud no. 2130</small>
-    </blockquote>
-  </section>
+        <section id="rsvp" class="section rsvp">
+            <div class="container">
+                <h2>Konfirmasi Kehadiran</h2>
+                <p>Mohon konfirmasi kehadiran Anda agar kami dapat mempersiapkan tempat dengan baik.</p>
+                <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20konfirmasi%20kehadiran%20di%20pernikahan%20Bunga%20%26%20Aditya." target="_blank" class="btn">Konfirmasi Via WhatsApp</a>
 
-  <section class="guestbook">
-    <h3>Buku Tamu</h3>
-    <form>
-      <input type="text" placeholder="Nama Anda" required />
-      <textarea placeholder="Ucapan & Doa" required></textarea>
-      <button type="submit">Kirim</button>
-    </form>
-  </section>
+                <div class="gift-info">
+                    <h3>Hadiah & Doa Restu</h3>
+                    <p>Bagi Bapak/Ibu/Saudara/i yang ingin memberikan hadiah atau doa restu, dapat melalui:</p>
+                    <p><strong>Bank BCA</strong></p>
+                    <p>A/N: Aditya Pratama</p>
+                    <p>No. Rek: 1234567890</p>
+                    <p>(Mohon konfirmasi setelah transfer)</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <footer>
-    <p>&copy; 2025 Muhammad & Aisyah</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Undangan Pernikahan Bunga & Aditya. All Rights Reserved.</p>
+            <p>Made with ❤️ by [Nama Kamu/Keluarga]</p>
+        </div>
+    </footer>
 </body>
 </html>
