@@ -3,94 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan</title>
+    <title>Undangan Pernikahan [Nama Pria] & [Nama Wanita]</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-content">
-            <p>The Wedding Of</p>
-            <h1>Wakhid & Nida</h1>
-            <p class="date-hero">Jum'at, 15 Agustus 2025</p>
-            <a href="#invitation-details" class="btn">Buka Undangan</a>
-        </div>
-    </header>
 
-    <main>
-        <section id="invitation-details" class="section details">
-            <div class="container">
-                <h2>Assalamualaikum Warahmatullahi Wabarakatuh</h2>
-                <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami:</p>
+    <div id="loading-screen">
+        <img src="https://rekcless.github.io/Wedding/images.jpeg" alt="Background Undangan">
+        <button id="open-undangan-btn">Buka Undangan</button>
+    </div>
 
-                <div class="couple-info">
-                    <div class="groom">
-                        <h3>Muwakhid Nur Imamah</h3>
-                        <p>Putra dari Bapak Supanto & Ibu Siti Marfuah</p>
-                    </div>
-                    <p class="and-symbol">&</p>
-                    <div class="bride">
-                        <h3>Afifah Nida Umi Fathiyah</h3>
-                        <p>Putri dari Bapak Marimo & Ibu Sri Suparsih</p>
-                    </div>
-                </div>
-                <p class="quote">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."</p>
-                <p class="quote-source">Q.S. Ar-Rum: 21</p>
+    <main id="main-content" style="display: none;">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#info-acara">Info Acara</a></li>
+                    <li><a href="#rsvp">RSVP</a></li>
+                    <li><a href="#ucapan">Ucapan</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="beranda" class="hero section-item">
+            <div class="hero-content">
+                <h1>The Wedding Of</h1>
+                <h2>[Nama Mempelai Pria] & [Nama Mempelai Wanita]</h2>
+                <p>Dengan memohon rahmat dan ridho Allah SWT, kami berbahagia mengundang Anda.</p>
+                <div id="countdown" class="countdown-timer"></div>
             </div>
         </section>
 
-        <section id="event-details" class="section event">
-           
-                <div class="event-card">
-                    <h3>Resepsi Pernikahan</h3>
-                    <p class="event-date">Jumat, 15 Agustus 2025</p>
-                    <p class="event-time">11.00 WIB - 17.00 WIB</p>
-                    <p class="event-location">di kediaman kami</p>
-                    <a href="https://maps.app.goo.gl/randommaplinkresepsi" target="_blank" class="btn-small">Lihat Peta</a>
-                </div>
-                <p class="dresscode">Dress Code: Busana Formal Nuansa Pastel</p>
+        <section id="info-acara" class="info section-item">
+            <h2>Informasi Acara</h2>
+            <div class="card">
+                <h3>Resepsi Pernikahan</h3>
+                <p><strong>Hari, Tanggal:</strong> [Hari], [Tanggal]</p>
+                <p><strong>Waktu:</strong> Pukul [Waktu] WIB</p>
+                <p><strong>Lokasi:</strong> [Nama Lokasi Resepsi]</p>
+                <p>[Alamat Lengkap Resepsi]</p>
+                <a href="[Link Google Maps Resepsi]" target="_blank" class="btn">Lihat Peta</a>
             </div>
         </section>
 
-        <section id="gallery" class="section gallery">
-            <div class="container">
-                <h2>Galeri Foto</h2>
-                <div class="gallery-grid">
-                    <img src="https://via.placeholder.com/300x200?text=Foto+1" alt="Foto Pernikahan 1">
-                    <img src="https://via.placeholder.com/300x200?text=Foto+2" alt="Foto Pernikahan 2">
-                    <img src="https://via.placeholder.com/300x200?text=Foto+3" alt="Foto Pernikahan 3">
-                    <img src="https://via.placeholder.com/300x200?text=Foto+4" alt="Foto Pernikahan 4">
-                    <img src="https://via.placeholder.com/300x200?text=Foto+5" alt="Foto Pernikahan 5">
-                    <img src="https://via.placeholder.com/300x200?text=Foto+6" alt="Foto Pernikahan 6">
-                </div>
-            </div>
+        <section id="rsvp" class="rsvp-section section-item">
+            <h2>Konfirmasi Kehadiran</h2>
+            <p>Mohon konfirmasi kehadiran Anda agar kami dapat mempersiapkan segala sesuatunya dengan baik.</p>
+            <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Halo,%20saya%20[Nama%20Anda]%20akan%20hadir%20di%20pernikahan%20[Nama%20Pria]%20dan%20[Nama%20Wanita]." target="_blank" class="btn rsvp-btn">Konfirmasi Via WhatsApp</a>
         </section>
 
-        <section id="rsvp" class="section rsvp">
-            <div class="container">
-                <h2>Konfirmasi Kehadiran</h2>
-                <p>Mohon konfirmasi kehadiran Anda agar kami dapat mempersiapkan tempat dengan baik.</p>
-                <a href="https://wa.me/6281914477668?text=Halo%2C%20saya%20ingin%20konfirmasi%20kehadiran%20di%20pernikahan%20Bunga%20%26%20Aditya." target="_blank" class="btn">Konfirmasi Via WhatsApp</a>
-
-                <div class="gift-info">
-                    <h3>Hadiah & Doa Restu</h3>
-                    <p>Bagi Bapak/Ibu/Saudara/i yang ingin memberikan hadiah atau doa restu, dapat melalui:</p>
-                    <p><strong>Bank BSI</strong></p>
-                    <p>A/N: Muwakhid Nur Imamah</p>
-                    <p>No. Rek: 1234567890</p>
-                    <p>(Mohon konfirmasi setelah transfer)</p>
-                </div>
-            </div>
+        <section id="ucapan" class="ucapan-section section-item">
+            <h2>Sampaikan Doa & Ucapan</h2>
+            <form id="form-ucapan">
+                <textarea id="isi-ucapan" placeholder="Tulis ucapan selamat dan doa terbaik Anda di sini..." required></textarea>
+                <button type="button" onclick="kirimUcapan()">Kirim Ucapan via WhatsApp</button>
+            </form>
         </section>
+
+        <footer>
+            <p>&copy; [Tahun] [Nama Mempelai Pria] & [Nama Mempelai Wanita]. Hak Cipta Dilindungi.</p>
+            <p>Dibuat dengan cinta.</p>
+        </footer>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Undangan Pernikahan Wakhid & Nida. All Rights Reserved.</p>
-            <p>Made with ❤️ by Wakhid]</p>
-        </div>
-    </footer>
     <script src="script.js"></script>
-
 </body>
 </html>
