@@ -1,398 +1,298 @@
-/* General Styles & Variables */
-:root {
-    --primary-green: #4CAF50;    /* A vibrant, standard green */
-    --secondary-green: #81C784;  /* A lighter, softer green */
-    --accent-color: #A5D6A7;     /* Even lighter green for subtle accents */
-    --text-dark: #333333;        /* Dark gray for main text */
-    --text-light: #555555;       /* Lighter gray for secondary text */
-    --white-bg: #F9F9F9;         /* Off-white background */
-    --pure-white: #FFFFFF;       /* Pure white for elements */
-}
-
+/* General Styling */
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: var(--white-bg);
-    color: var(--text-dark);
+    color: #333;
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+    background-color: #f0f0f0; /* Off-white background */
 }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--primary-green);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 4em; /* Larger and more impactful */
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-}
-
-h2 {
-    font-size: 3em; /* Larger */
-    margin-bottom: 30px;
-    position: relative;
-    padding-bottom: 15px;
-    color: var(--primary-green); /* Ensure consistent color */
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 100px; /* Wider and more prominent underline */
-    height: 5px; /* Thicker underline */
-    background-color: var(--secondary-green);
-    border-radius: 5px;
-}
-
-h3 {
-    font-size: 2.2em;
-    margin-bottom: 15px;
-    color: var(--secondary-green); /* Use secondary green for h3 */
-}
-
-p {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-a {
-    text-decoration: none;
-    color: var(--secondary-green);
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--primary-green);
-}
-
-/* Hero Section (Awal Undangan) */
-.hero {
-    background: url('https://rekcless.github.io/Wedding/images.jpeg') no-repeat center center/cover; /* Placeholder green background */
-    color: var(--pure-white);
-    text-align: center;
-    padding: 120px 20px; /* More padding */
-    min-height: 100vh;
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    position: relative;
-    z-index: 1;
+    align-items: center;
+    z-index: 9999;
+    color: #fff;
 }
 
-.hero::before {
-    content: '';
+#loading-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Darker overlay for better text contrast */
-    z-index: -1;
+    opacity: 0.7; /* Sedikit transparan untuk teks di atasnya */
+    filter: brightness(0.7); /* Gelapkan gambar agar teks terlihat */
 }
 
-.hero-content {
-    max-width: 700px;
-    animation: fadeInScale 2s ease-out; /* Enhanced initial animation */
-}
-
-.hero-content p {
-    font-size: 1.4em;
-    margin-bottom: 5px;
-    font-weight: 300;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
-
-.hero-content h1 {
-    color: var(--pure-white); /* Ensure H1 in hero is white */
-}
-
-.hero-content .date-hero {
-    font-size: 1.8em;
-    font-weight: 700;
-    margin-top: 20px;
-    color: var(--pure-white);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
-
-/* "Buka Undangan" Button with Cartoon Background */
-.btn {
-    display: inline-block;
-    /* Custom cartoon background */
-    background: url('https://rekcless.github.io/Wedding/images.jpeg') no-repeat center center/cover; /* Placeholder for cartoon image */
-    color: var(--pure-white); /* Text color on the button */
-    padding: 18px 40px; /* Generous padding */
-    border-radius: 50px; /* Fully rounded, pill shape */
-    transition: all 0.4s ease;
-    margin-top: 40px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-    border: 3px solid var(--pure-white); /* White border for emphasis */
+#open-undangan-btn {
+    position: relative; /* Agar di atas gambar */
+    padding: 15px 30px;
+    background-color: #28a745; /* Hijau cerah */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
     cursor: pointer;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Text shadow for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 10000; /* Pastikan di atas gambar */
 }
 
-.btn:hover {
-    background-size: 110%; /* Slight zoom effect on hover */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
-    transform: translateY(-5px) scale(1.02); /* More pronounced lift and slight scale */
-    border-color: var(--accent-color); /* Border color changes on hover */
-}
-
-.btn-small {
-    display: inline-block;
-    background-color: var(--secondary-green);
-    color: var(--pure-white);
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-size: 0.95em;
-    font-weight: 600;
-}
-
-.btn-small:hover {
-    background-color: var(--primary-green);
+#open-undangan-btn:hover {
+    background-color: #218838;
     transform: translateY(-2px);
 }
 
-/* Sections Styling */
-.section {
-    padding: 80px 20px; /* More generous padding */
-    background-color: var(--pure-white);
-    margin: 25px auto; /* Centered with margin */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Stronger shadow */
-    border-radius: 15px; /* More rounded corners */
-    opacity: 0; /* Hidden by default for JS animation */
-    transform: translateY(50px); /* Starts below */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth animation */
+/* Header & Nav */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.section.is-visible {
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #28a745; /* Hijau cerah */
+    font-weight: 700;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #28a745;
+    left: 50%;
+    bottom: 0;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+nav a:hover {
+    color: #218838;
+}
+
+/* Sections Styling */
+section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 20px; /* Jarak antar section */
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    opacity: 0; /* Hidden by default for pop-up effect */
+    transform: translateY(30px); /* Start position for pop-up */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Pop-up effect on scroll */
+section.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Details Section */
-.details .couple-info {
+/* Hero Section */
+.hero {
+    background-color: #e6ffe6; /* Sangat pucat hijau */
+    padding-top: 200px; /* Space for fixed header */
+    min-height: 80vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    margin-bottom: 40px;
 }
 
-.details .couple-info div {
-    flex: 1;
-    min-width: 280px;
-    padding: 20px;
-    text-align: center;
+.hero-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 700px;
 }
 
-.details .couple-info h3 {
-    margin-bottom: 8px;
-    color: var(--primary-green); /* Main green for names */
-    font-size: 2.5em; /* Larger names */
-}
-
-.details .couple-info p {
-    color: var(--text-light);
-    font-size: 1.15em;
-}
-
-.details .and-symbol {
+.hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4em; /* Very large '&' */
-    color: var(--secondary-green);
-    margin: 0 30px;
+    font-size: 3.5em;
+    color: #28a745;
+    margin-bottom: 10px;
 }
 
-.quote {
-    font-style: italic;
-    font-size: 1.3em; /* Larger quote */
-    color: var(--text-light);
-    margin-top: 50px;
-    margin-bottom: 15px;
-    padding: 0 40px;
-    line-height: 1.8;
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #333;
+    margin-top: 0;
 }
 
-.quote-source {
-    font-weight: 600;
-    color: var(--primary-green);
-    font-size: 1.05em;
-    margin-bottom: 0;
-}
-
-/* Event Section */
-.event .event-card {
-    background-color: var(--white-bg);
-    border: 1px solid var(--accent-color); /* Border with accent green */
-    padding: 30px;
-    margin-bottom: 25px;
+.countdown-timer {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #007f00; /* Darker green for countdown */
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #f0fdf0;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* More prominent shadow */
-    text-align: center;
+    display: inline-block;
 }
 
-.event .event-card h3 {
-    color: var(--primary-green);
-    margin-bottom: 12px;
-    font-size: 2em;
+/* Info Acara Section */
+.info .card {
+    background-color: #f9fff9; /* Lightest green/white */
+    border: 1px solid #e0f2e0;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.event .event-date,
-.event .event-time {
-    font-weight: 700;
-    color: var(--secondary-green);
-    margin-bottom: 8px;
-    font-size: 1.2em;
-}
-
-.event .event-location {
-    color: var(--text-light);
-    margin-bottom: 20px;
-    font-size: 1.1em;
-}
-
-.dresscode {
-    margin-top: 40px;
-    font-style: italic;
-    color: var(--text-light);
-    font-size: 1.15em;
-    font-weight: 600;
-}
-
-/* Gallery Section */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px; /* More gap */
-    margin-top: 40px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 250px; /* Taller images */
-    object-fit: cover;
-    border-radius: 12px; /* More rounded */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* Stronger shadow */
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.07); /* More pronounced zoom */
-    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+.info h3 {
+    color: #28a745;
+    font-size: 1.8em;
+    margin-bottom: 15px;
 }
 
 /* RSVP Section */
-.rsvp .gift-info {
-    background-color: var(--white-bg);
-    border: 1px solid var(--accent-color);
-    padding: 30px;
-    margin-top: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    text-align: center;
+.rsvp-section .rsvp-btn {
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.rsvp .gift-info h3 {
-    color: var(--primary-green);
-    margin-bottom: 12px;
+.rsvp-section .rsvp-btn:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
 }
 
-.rsvp .gift-info p {
-    color: var(--text-light);
-    margin-bottom: 8px;
-    font-size: 1.05em;
+/* Ucapan Section */
+.ucapan-section form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ucapan-section textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    border: 1px solid #e0f2e0;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.ucapan-section button {
+    padding: 15px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ucapan-section button:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
 }
 
 /* Footer */
 footer {
-    background-color: var(--primary-green);
-    color: var(--pure-white);
+    background-color: #28a745; /* Hijau cerah */
+    color: white;
     text-align: center;
-    padding: 35px 20px;
-    margin-top: 30px;
-    border-radius: 15px;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.1); /* Shadow for footer */
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 footer p {
-    margin: 8px 0;
-    font-size: 0.95em;
+    margin: 5px 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 3.2em;
+    nav ul li {
+        margin: 0 10px;
     }
 
-    h2 {
-        font-size: 2.4em;
+    .hero h1 {
+        font-size: 2.5em;
     }
 
-    .details .couple-info {
-        flex-direction: column;
+    .hero h2 {
+        font-size: 1.8em;
     }
 
-    .details .and-symbol {
-        margin: 30px 0;
-        font-size: 3.5em;
+    .countdown-timer {
+        font-size: 1.2em;
     }
 
-    .btn {
-        padding: 15px 30px;
-        font-size: 0.9em;
-    }
-
-    .section {
-        padding: 60px 15px;
+    section {
+        padding: 50px 15px;
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2.5em;
+    nav ul li {
+        display: block;
+        margin: 5px 0;
     }
 
-    h2 {
+    .hero h1 {
         font-size: 2em;
     }
 
-    h3 {
-        font-size: 1.8em;
+    .hero h2 {
+        font-size: 1.5em;
     }
 
-    .btn {
+    #open-undangan-btn {
+        font-size: 1em;
         padding: 12px 25px;
-        font-size: 0.85em;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .quote {
-        font-size: 1.1em;
-        padding: 0 20px;
     }
 }
