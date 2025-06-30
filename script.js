@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. Countdown Timer ---
     // Ganti dengan tanggal pernikahanmu: Tahun, Bulan (0-11), Tanggal, Jam, Menit, Detik
-    const weddingDate = new Date('2025-08-15T10:00:00').getTime(); // Contoh: 31 Desember 2025, jam 10 pagi
+    const weddingDate = new Date('2025-12-31T10:00:00').getTime(); // Contoh: 31 Desember 2025, jam 10 pagi
 
     function updateCountdown() {
         const now = new Date().getTime();
