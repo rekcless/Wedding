@@ -5,84 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan Wakhid & Nida</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="loading-screen">
-        <img src="https://rekcless.github.io/Wedding/images.jpeg" alt="Background Undangan">
-        <div class="opening-text">
-            <p>Dengan Segala Kerendahan Hati,</p>
-            <h1>Wakhid & Nida</h1>
-            <p class="invitation-phrase">Memohon Kehadiran dan Doa Restu Bapak/Ibu/Saudara/i Sekalian</p>
-        </div>
-        <button id="open-undangan-btn">Buka Undangan</button>
-    </div>
+    <audio id="background-music" loop>
+        <source src="nama_lagu_anda.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-    <main id="main-content" style="display: none;">
-        <header>
-            </header>
-
-        <section id="beranda" class="hero section-item">
+    <div class="container">
+        <section id="hero" class="hero-section">
             <div class="hero-content">
-                <p class="small-text">The Wedding Of</p>
-                
-                <div class="couple-details">
-                    <div class="groom-info">
-                        <h2 class="couple-name">Muwakhid Nur Imamah</h2>
-                        <p class="parents-name">Putra dari Bapak Supanto & Ibu Siti Marfuah</p>
-                    </div>
-                    <span class="and-symbol">&</span>
-                    <div class="bride-info">
-                        <h2 class="couple-name">Afifah Nida Umi Fathiyah</h2>
-                        <p class="parents-name">Putri dari Bapak Marimo & Ibu Sri Suparsih</p>
-                    </div>
-                </div>
-
-                <p class="intro-text">Dengan memohon rahmat dan ridho Allah SWT, kami berbahagia mengundang Anda.</p>
-                
-                <div class="divider"></div> <div class="ayat-quran">
-                    <p class="arabic">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
-                    <p class="terjemahan">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."</p>
-                    <p class="surah">(QS. Ar-Rum: 21)</p>
-                </div>
-
-                <div class="divider"></div> <div id="countdown" class="countdown-timer"></div>
+                <p class="greeting-text">Undangan Pernikahan</p>
+                <h1>Wakhid & Nida</h1>
+                <p class="date-text">Minggu, 12 Januari 2026</p>
+                <button id="open-invitation-btn" class="btn">Buka Undangan</button>
             </div>
         </section>
 
-        <section id="info-acara" class="info section-item">
-            <h2 class="section-title">Informasi Acara</h2>
-            <div class="card event-card">
-                <h3>Resepsi Pernikahan</h3>
-                <p><strong>Hari, Tanggal:</strong> <span class="event-detail">Jum'at, 15 Agustus 2025</span></p>
-                <p><strong>Waktu:</strong> <span class="event-detail">Pukul 01.00 WIB</span></p>
-                <p><strong>Lokasi:</strong> <span class="event-detail">Di Kediaman Kami</span></p>
-                <p class="event-address">Kauman Rt 02/Rw 07 Karanganyar, Weru, Sukoharjo</p>
-                <a href="[Link Google Maps Resepsi]" target="_blank" class="btn map-btn">Lihat Peta</a>
-            </div>
-        </section>
+        <div id="main-content" class="main-content hidden">
 
-        <section id="rsvp" class="rsvp-section section-item">
-            <h2 class="section-title">Konfirmasi Kehadiran</h2>
-            <p class="rsvp-message">Mohon konfirmasi kehadiran Anda agar kami dapat mempersiapkan segala sesuatunya dengan baik.</p>
-            <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Halo,%20saya%20[Nama%20Anda]%20akan%20hadir%20di%20pernikahan%20[Nama%20Pria]%20dan%20[Nama%20Wanita]." target="_blank" class="btn rsvp-btn">Konfirmasi Via WhatsApp</a>
-        </section>
+            <section id="opening" class="section">
+                <p class="quote">
+                    "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir." <br> (QS. Ar-Rum: 21)
+                </p>
+                <p>Maha Suci Allah SWT yang telah menciptakan manusia berpasang-pasangan.</p>
+                <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan putra-putri kami:</p>
 
-        <section id="ucapan" class="ucapan-section section-item">
-            <h2 class="section-title">Sampaikan Doa & Ucapan</h2>
-            <form id="form-ucapan" class="ucapan-form">
-                <textarea id="isi-ucapan" placeholder="Tulis ucapan selamat dan doa terbaik Anda di sini..." required></textarea>
-                <button type="button" onclick="kirimUcapan()" class="btn submit-ucapan-btn">Kirim Ucapan via WhatsApp</button>
-            </form>
-        </section>
+                <div class="parents-info">
+                    <p>Putra dari Bpk. Supanto & Ibu Siti Marfuah</p>
+                    <h2>Muwakhid Nur Imamah</h2>
+                    <p>Dengan</p>
+                    <p>Putri dari Bpk. Marimo & Ibu Sri Suparsih</p>
+                    <h2>Afifah Nida Umi Fathiyah</h2>
+                </div>
+                <p>Yang Insya Allah akan dilaksanakan pada:</p>
+            </section>
 
-        <footer>
-            <p>&copy; 2025 Wakhid & Nida. Hak Cipta Dilindungi.</p>
-            <p>Dibuat dengan cinta.</p>
-        </footer>
-    </main>
+            <section id="event-details" class="section">
+                <h2>Detail Acara</h2>
 
-    <script src="script.js"></script>
+                <div class="event-card">
+                    <h3>Resepsi Pernikahan</h3>
+                    <p><span class="icon">🗓️</span> **Hari, Tanggal:** Jumat, 15 Agustus 2025</p>
+                    <p><span class="icon">⏰</span> **Waktu:** 01.00 WIB - Selesai</p>
+                    <p><span class="icon">📍</span> **Lokasi:** Di Kediaman Kami, Kauman Rt 02 / Rw 07 Karanganyar, Weru, Sukoharjo</p>
+                    <a href="https://maps.app.goo.gl/contohlinkgooglemapsanda" target="_blank" class="btn small-btn">Lihat Peta</a>
+                </div>
+            </section>
+
+            <section id="countdown" class="section">
+                <h2>Menuju Hari Bahagia</h2>
+                <div class="countdown-timer">
+                    <div class="countdown-item">
+                        <span id="days">00</span>
+                        <p>Hari</p>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <p>Jam</p>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <p>Menit</p>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <p>Detik</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer" class="section">
+                <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
+                <p>Wassalamualaikum Warahmatullahi Wabarakatuh.</p>
+                <p class="signature">Hormat kami,</p>
+                <h3>Wakhid & Nida</h3>
+                <p class="copyright">© 2025 Wakhid & Nida. All Rights Reserved.</p>
+            </footer>
+
+        </div> </div> <script>
+        // JavaScript untuk membuka undangan dan memutar musik
+        document.getElementById('open-invitation-btn').addEventListener('click', function() {
+            document.getElementById('hero').style.display = 'none';
+            document.getElementById('main-content').classList.remove('hidden');
+            document.body.style.overflowY = 'scroll'; // Aktifkan scroll
+            var music = document.getElementById('background-music');
+            if (music) {
+                music.play().catch(e => console.log("Autoplay blocked:", e)); // Coba putar musik
+            }
+        });
+
+        // JavaScript untuk Countdown Timer
+        // **PASTIKAN GANTI TANGGAL DAN WAKTU INI DENGAN TANGGAL RESEPSI LO**
+        const countdownDate = new Date("Agustus 15, 2025 11:00:00").getTime(); 
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<h2>Acara Telah Dimulai!</h2>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<h2>Acara Telah Dimulai!</h2>";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
