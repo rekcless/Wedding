@@ -75,7 +75,7 @@ p {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Full viewport height */
-    background-image: url('https://via.placeholder.com/800x1200/F0E68C/555555?text=Background+Image+Anda'); /* Ganti dengan URL gambar latar belakang lo */
+    background-image: url('[https://via.placeholder.com/800x1200/F0E68C/555555?text=Background+Image+Anda](https://via.placeholder.com/800x1200/F0E68C/555555?text=Background+Image+Anda)'); /* Ganti dengan URL gambar latar belakang lo */
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -124,9 +124,11 @@ p {
 
 /* Hide Main Content Initially */
 .main-content {
-    display: none;
+    display: none; /* Ini tetap ada agar tersembunyi di awal */
 }
 
+/* KESALAHAN SEBELUMNYA ADA DI SINI: 'display: none !important;' */
+/* Sekarang saya hapus '!important' agar JS bisa menimpa properti ini */
 .main-content.hidden {
     display: none;
 }
@@ -218,8 +220,9 @@ footer .copyright {
 }
 
 /* Utility Class */
+/* Saya hapus '!important' dari sini */
 .hidden {
-    display: none !important;
+    display: none;
 }
 
 /* Responsive Adjustments */
