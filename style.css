@@ -83,7 +83,7 @@ a:hover {
 
 /* Hero Section (Awal Undangan) */
 .hero {
-    background: url('https://via.placeholder.com/1500x800/4CAF50/FFFFFF?text=Green+Wedding+Background') no-repeat center center/cover; /* Placeholder green background */
+    background: url('https://rekcless.github.io/Wedding/images.jpeg') no-repeat center center/cover; /* Placeholder green background */
     color: var(--pure-white);
     text-align: center;
     padding: 120px 20px; /* More padding */
@@ -134,7 +134,7 @@ a:hover {
 .btn {
     display: inline-block;
     /* Custom cartoon background */
-    background: url('https://id.pinterest.com/pin/682084306088157367/') no-repeat center center/cover; /* Placeholder for cartoon image */
+    background: url('https://rekcless.github.io/Wedding/images.jpeg') no-repeat center center/cover; /* Placeholder for cartoon image */
     color: var(--pure-white); /* Text color on the button */
     padding: 18px 40px; /* Generous padding */
     border-radius: 50px; /* Fully rounded, pill shape */
