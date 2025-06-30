@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan Wakhid & Nida</title>
+    <title>Undangan Pernikahan [Nama Kalian]</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -18,7 +18,7 @@
         <section id="hero" class="hero-section">
             <div class="hero-content">
                 <p class="greeting-text">Undangan Pernikahan</p>
-                <h1>Wakhid & Nida</h1>
+                <h1>[Nama Mempelai Wanita] & [Nama Mempelai Pria]</h1>
                 <p class="date-text">Minggu, 12 Januari 2026</p>
                 <button id="open-invitation-btn" class="btn">Buka Undangan</button>
             </div>
@@ -34,11 +34,11 @@
                 <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan putra-putri kami:</p>
 
                 <div class="parents-info">
-                    <p>Putra dari Bpk. Supanto & Ibu Siti Marfuah</p>
-                    <h2>Muwakhid Nur Imamah</h2>
+                    <p>Putri dari Bpk. [Nama Ayah Wanita] & Ibu [Nama Ibu Wanita]</p>
+                    <h2>[Nama Mempelai Wanita]</h2>
                     <p>Dengan</p>
-                    <p>Putri dari Bpk. Marimo & Ibu Sri Suparsih</p>
-                    <h2>Afifah Nida Umi Fathiyah</h2>
+                    <p>Putra dari Bpk. [Nama Ayah Pria] & Ibu [Nama Ibu Pria]</p>
+                    <h2>[Nama Mempelai Pria]</h2>
                 </div>
                 <p>Yang Insya Allah akan dilaksanakan pada:</p>
             </section>
@@ -48,9 +48,9 @@
 
                 <div class="event-card">
                     <h3>Resepsi Pernikahan</h3>
-                    <p><span class="icon">🗓️</span> **Hari, Tanggal:** Jumat, 15 Agustus 2025</p>
-                    <p><span class="icon">⏰</span> **Waktu:** 01.00 WIB - Selesai</p>
-                    <p><span class="icon">📍</span> **Lokasi:** Di Kediaman Kami, Kauman Rt 02 / Rw 07 Karanganyar, Weru, Sukoharjo</p>
+                    <p><span class="icon">🗓️</span> **Hari, Tanggal:** Minggu, 12 Januari 2026</p>
+                    <p><span class="icon">⏰</span> **Waktu:** 11.00 WIB - 15.00 WIB</p>
+                    <p><span class="icon">📍</span> **Lokasi:** [Nama Tempat Resepsi], [Alamat Lengkap Resepsi]</p>
                     <a href="https://maps.app.goo.gl/contohlinkgooglemapsanda" target="_blank" class="btn small-btn">Lihat Peta</a>
                 </div>
             </section>
@@ -81,8 +81,8 @@
                 <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
                 <p>Wassalamualaikum Warahmatullahi Wabarakatuh.</p>
                 <p class="signature">Hormat kami,</p>
-                <h3>Wakhid & Nida</h3>
-                <p class="copyright">© 2025 Wakhid & Nida. All Rights Reserved.</p>
+                <h3>[Nama Mempelai Wanita] & [Nama Mempelai Pria]</h3>
+                <p class="copyright">© 2025 [Nama Kalian]. All Rights Reserved.</p>
             </footer>
 
         </div> </div> <script>
@@ -99,7 +99,7 @@
 
         // JavaScript untuk Countdown Timer
         // **PASTIKAN GANTI TANGGAL DAN WAKTU INI DENGAN TANGGAL RESEPSI LO**
-        const countdownDate = new Date("Agustus 15, 2025 11:00:00").getTime(); 
+        const countdownDate = new Date("Jan 12, 2026 11:00:00").getTime(); 
         const x = setInterval(function() {
             const now = new Date().getTime();
             const distance = countdownDate - now;
@@ -111,17 +111,6 @@
 
             document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
             document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "<h2>Acara Telah Dimulai!</h2>";
-            }
-        }, 1000);
-    </script>
-</body>
-</html>
             document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
             document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
 
