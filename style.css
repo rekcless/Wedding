@@ -21,7 +21,10 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    color: #fff;
+    color: #fff; /* Warna teks default di loading screen */
+    text-align: center;
+    padding: 20px; /* Tambahkan padding agar teks tidak terlalu mepet */
+    box-sizing: border-box; /* Pastikan padding tidak membuat layar melebihi 100% */
 }
 
 #loading-screen img {
@@ -34,6 +37,35 @@ body {
     opacity: 0.7; /* Sedikit transparan untuk teks di atasnya */
     filter: brightness(0.7); /* Gelapkan gambar agar teks terlihat */
 }
+
+.opening-text {
+    position: relative; /* Agar di atas gambar */
+    z-index: 10001; /* Pastikan di atas gambar dan tombol */
+    margin-bottom: 40px; /* Jarak antara teks dan tombol */
+    color: white; /* Pastikan teks terlihat jelas */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Efek bayangan agar teks lebih terbaca */
+}
+
+.opening-text p {
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+    font-family: 'Playfair Display', serif; /* Font lebih elegan */
+}
+
+.opening-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em; /* Ukuran nama pengantin lebih besar */
+    margin: 0;
+    color: #fff; /* Warna putih untuk nama */
+}
+
+.opening-text .invitation-phrase {
+    font-size: 1.4em;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #f0f0f0; /* Sedikit berbeda dari putih murni */
+}
+
 
 #open-undangan-btn {
     position: relative; /* Agar di atas gambar */
@@ -275,6 +307,13 @@ footer p {
     section {
         padding: 50px 15px;
     }
+
+    .opening-text h1 {
+        font-size: 2.5em; /* Kecilkan di mobile */
+    }
+    .opening-text .invitation-phrase {
+        font-size: 1.1em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -294,5 +333,12 @@ footer p {
     #open-undangan-btn {
         font-size: 1em;
         padding: 12px 25px;
+    }
+
+    .opening-text h1 {
+        font-size: 2em; /* Lebih kecil lagi di mobile */
+    }
+    .opening-text .invitation-phrase {
+        font-size: 1em;
     }
 }
