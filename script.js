@@ -87,7 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Ucapan Anda akan dikirimkan via WhatsApp. Terima kasih!");
     };
 
-    // --- Smooth Scroll untuk Navigasi ---
+    // --- Smooth Scroll untuk Navigasi (Dihilangkan karena tidak ada menu navigasi) ---
+    // Baris ini dihapus atau dikomentari karena tidak ada lagi elemen nav a
+    /*
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -97,4 +99,5 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+    */
 });
