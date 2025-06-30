@@ -86,40 +86,62 @@ body {
     transform: translateY(-2px);
 }
 
-/* Header & Nav */
+/* Header (Empty, hidden) */
 header {
-    /* Atur agar header tidak terlihat atau tidak mengambil ruang jika tidak ada konten */
-    height: 0; /* Menghilangkan tinggi */
-    padding: 0; /* Menghilangkan padding */
-    overflow: hidden; /* Sembunyikan konten jika ada */
-    position: fixed; /* Tetap fixed jika nanti mau dipakai lagi */
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: transparent; /* Buat transparan jika masih terlihat */
-    box-shadow: none; /* Hilangkan bayangan */
+    background-color: transparent;
+    box-shadow: none;
 }
-
-/* Navigasi menu tidak ada, jadi tidak perlu styling untuk nav ul, nav li, nav a */
 
 /* Sections Styling */
 section {
     padding: 80px 20px;
     text-align: center;
     background-color: #fff;
-    margin-top: 20px; /* Jarak antar section */
-    box-shadow: 0 0 15px rgba(0,0,0,0.05);
-    border-radius: 8px;
+    margin-top: 40px; /* Tambah jarak antar section */
+    box-shadow: 0 0 20px rgba(0,0,0,0.08); /* Bayangan lebih jelas */
+    border-radius: 15px; /* Sudut lebih membulat */
     opacity: 0; /* Hidden by default for pop-up effect */
-    transform: translateY(30px); /* Start position for pop-up */
+    transform: translateY(40px); /* Start position for pop-up */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    max-width: 900px; /* Batasi lebar section */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Pop-up effect on scroll */
 section.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Section Titles */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8em;
+    color: #28a745;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background-color: #28a745;
+    border-radius: 5px;
 }
 
 /* Hero Section */
@@ -134,140 +156,209 @@ section.show {
 }
 
 .hero-content {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.95); /* Lebih solid */
+    padding: 50px; /* Padding lebih besar */
+    border-radius: 20px; /* Sudut lebih membulat */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Bayangan lebih dalam */
+    max-width: 800px;
 }
 
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5em;
-    color: #28a745;
+.hero .small-text {
+    font-size: 1.3em;
+    color: #555;
     margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
 }
 
-.hero h2 {
+.hero .couple-names {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
-    color: #333;
-    margin-top: 0;
+    font-size: 4.5em; /* Ukuran nama pengantin lebih besar */
+    color: #28a745;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+}
+
+.hero .ampersand {
+    font-size: 0.8em; /* Ukuran '&' lebih kecil dari nama */
+    vertical-align: super;
+    margin: 0 10px;
+    color: #007f00;
+}
+
+.hero .intro-text {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Divider */
+.divider {
+    width: 100px;
+    height: 2px;
+    background-color: #28a745;
+    margin: 40px auto;
+    border-radius: 5px;
 }
 
 /* Ayat Al-Qur'an Styling */
 .ayat-quran {
-    margin: 30px auto;
-    max-width: 600px;
-    font-size: 1.1em;
+    margin: 40px auto; /* Jarak lebih luas */
+    max-width: 650px;
+    font-size: 1.2em; /* Ukuran font terjemahan sedikit lebih besar */
     line-height: 1.8;
     color: #555;
     background-color: #f0fdf0;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 5px solid #28a745;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 30px; /* Padding lebih besar */
+    border-radius: 15px; /* Sudut lebih membulat */
+    border-left: 8px solid #28a745; /* Border lebih tebal */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07); /* Bayangan lebih halus */
 }
 
 .ayat-quran .arabic {
     font-family: 'Lateef', serif; /* Contoh font Arab, bisa diganti */
-    font-size: 1.8em;
+    font-size: 2.2em; /* Ukuran font Arab lebih besar */
     direction: rtl; /* Right-to-left untuk teks Arab */
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #007f00;
+    line-height: 1.5; /* Line height untuk teks Arab */
 }
 
 .ayat-quran .terjemahan {
     font-style: italic;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #444;
 }
 
 .ayat-quran .surah {
-    font-size: 0.9em;
+    font-size: 1em;
     text-align: right;
     color: #777;
+    font-weight: bold;
 }
 
-
 .countdown-timer {
-    font-size: 1.8em;
+    font-size: 2em; /* Countdown lebih besar */
     font-weight: bold;
     color: #007f00; /* Darker green for countdown */
-    margin-top: 30px;
-    padding: 10px 20px;
+    margin-top: 40px; /* Jarak lebih luas */
+    padding: 15px 30px; /* Padding lebih besar */
     background-color: #f0fdf0;
-    border-radius: 10px;
+    border-radius: 15px;
     display: inline-block;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.countdown-timer small {
+    display: block;
+    font-size: 0.6em;
+    font-weight: normal;
+    color: #666;
+    margin-top: 5px;
 }
 
 /* Info Acara Section */
-.info .card {
+.info .event-card {
     background-color: #f9fff9; /* Lightest green/white */
     border: 1px solid #e0f2e0;
-    border-radius: 10px;
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 600px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-radius: 15px; /* Sudut lebih membulat */
+    padding: 40px; /* Padding lebih besar */
+    margin: 30px auto;
+    max-width: 650px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.07);
 }
 
 .info h3 {
     color: #28a745;
-    font-size: 1.8em;
-    margin-bottom: 15px;
+    font-size: 2em; /* Ukuran judul event lebih besar */
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.info strong {
+    color: #007f00;
+}
+
+.info .event-detail {
+    font-weight: bold;
+    color: #444;
+}
+
+.info .event-address {
+    font-size: 1em;
+    margin-top: 15px;
+    color: #777;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px; /* Padding lebih besar */
+    background-color: #28a745; /* Hijau cerah */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.map-btn {
+    margin-top: 25px;
 }
 
 /* RSVP Section */
-.rsvp-section .rsvp-btn {
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 50px;
+.rsvp-section .rsvp-message {
     font-size: 1.1em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 25px;
+    color: #555;
 }
 
-.rsvp-section .rsvp-btn:hover {
-    background-color: #218838;
-    transform: translateY(-3px);
+.rsvp-section .rsvp-btn {
+    padding: 15px 30px;
+    font-size: 1.2em; /* Ukuran tombol RSVP lebih besar */
 }
+
 
 /* Ucapan Section */
-.ucapan-section form {
-    max-width: 600px;
-    margin: 20px auto;
+.ucapan-form {
+    max-width: 650px;
+    margin: 30px auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px; /* Jarak antar elemen form lebih besar */
 }
 
 .ucapan-section textarea {
     width: 100%;
-    min-height: 120px;
-    padding: 15px;
+    min-height: 150px; /* Tinggi textarea lebih besar */
+    padding: 18px; /* Padding lebih besar */
     border: 1px solid #e0f2e0;
-    border-radius: 8px;
+    border-radius: 10px; /* Sudut lebih membulat */
     font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    box-sizing: border-box; /* Include padding in width */
-}
-
-.ucapan-section button {
-    padding: 15px 25px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 50px;
     font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box; /* Include padding in width */
+    resize: vertical; /* Hanya bisa resize vertikal */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08); /* Efek inset shadow */
 }
 
-.ucapan-section button:hover {
-    background-color: #218838;
-    transform: translateY(-3px);
+.ucapan-section textarea::placeholder {
+    color: #aaa;
+}
+
+.ucapan-section .submit-ucapan-btn {
+    padding: 15px 25px;
+    font-size: 1.2em;
 }
 
 /* Footer */
@@ -275,34 +366,83 @@ footer {
     background-color: #28a745; /* Hijau cerah */
     color: white;
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 40px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    padding: 40px 20px; /* Padding lebih besar */
+    margin-top: 60px; /* Jarak lebih jauh dari section terakhir */
+    border-top-left-radius: 20px; /* Sudut lebih membulat */
+    border-top-right-radius: 20px; /* Sudut lebih membulat */
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1); /* Bayangan ke atas */
 }
 
 footer p {
     margin: 5px 0;
+    font-size: 0.95em;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Header juga akan mengikuti pengaturan height dan padding 0 */
-
-    .hero h1 {
-        font-size: 2.5em;
+    section {
+        padding: 60px 15px;
+        margin-top: 30px;
     }
 
-    .hero h2 {
+    .section-title {
+        font-size: 2.2em;
+    }
+
+    .hero-content {
+        padding: 30px;
+    }
+
+    .hero .small-text {
+        font-size: 1em;
+    }
+
+    .hero .couple-names {
+        font-size: 3.5em;
+    }
+
+    .hero .intro-text {
+        font-size: 1em;
+    }
+
+    .ayat-quran {
+        padding: 20px;
+        font-size: 1em;
+    }
+    .ayat-quran .arabic {
         font-size: 1.8em;
+    }
+    .ayat-quran .terjemahan {
+        font-size: 0.9em;
     }
 
     .countdown-timer {
-        font-size: 1.2em;
+        font-size: 1.5em;
+        padding: 10px 20px;
     }
 
-    section {
-        padding: 50px 15px;
+    .info .event-card {
+        padding: 30px;
+    }
+    .info h3 {
+        font-size: 1.6em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .rsvp-section .rsvp-btn,
+    .ucapan-section .submit-ucapan-btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .ucapan-section textarea {
+        min-height: 100px;
+        padding: 12px;
+        font-size: 1em;
     }
 
     .opening-text h1 {
@@ -311,29 +451,96 @@ footer p {
     .opening-text .invitation-phrase {
         font-size: 1.1em;
     }
-
-    .ayat-quran .arabic {
-        font-size: 1.4em;
-    }
-    .ayat-quran .terjemahan {
-        font-size: 0.9em;
-    }
 }
 
 @media (max-width: 480px) {
-    /* Header juga akan mengikuti pengaturan height dan padding 0 */
-
-    .hero h1 {
-        font-size: 2em;
+    section {
+        padding: 40px 10px;
+        margin-top: 20px;
+        border-radius: 10px;
     }
 
-    .hero h2 {
+    .section-title {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .section-title::after {
+        width: 60px;
+        height: 2px;
+    }
+
+    .hero-content {
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .hero .couple-names {
+        font-size: 2.8em;
+    }
+    .hero .ampersand {
+        margin: 0 5px;
+    }
+
+    .hero .intro-text {
+        font-size: 0.9em;
+    }
+
+    .divider {
+        margin: 25px auto;
+    }
+
+    .ayat-quran {
+        padding: 15px;
+        font-size: 0.9em;
+        border-left-width: 5px;
+    }
+    .ayat-quran .arabic {
         font-size: 1.5em;
     }
+    .ayat-quran .terjemahan {
+        font-size: 0.8em;
+    }
 
-    #open-undangan-btn {
-        font-size: 1em;
-        padding: 12px 25px;
+    .countdown-timer {
+        font-size: 1.2em;
+        padding: 8px 15px;
+    }
+
+    .info .event-card {
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .info h3 {
+        font-size: 1.4em;
+    }
+    .info p {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.85em;
+        border-radius: 40px;
+    }
+
+    .rsvp-section .rsvp-btn,
+    .ucapan-section .submit-ucapan-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .ucapan-section textarea {
+        min-height: 80px;
+        padding: 10px;
+        font-size: 0.9em;
+        border-radius: 8px;
+    }
+
+    footer {
+        padding: 25px 15px;
+        margin-top: 40px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
     }
 
     .opening-text h1 {
@@ -341,12 +548,5 @@ footer p {
     }
     .opening-text .invitation-phrase {
         font-size: 1em;
-    }
-
-    .ayat-quran .arabic {
-        font-size: 1.2em;
-    }
-    .ayat-quran .terjemahan {
-        font-size: 0.8em;
     }
 }
