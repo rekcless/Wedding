@@ -1,11 +1,12 @@
-/* General Styles */
+/* General Styles & Variables */
 :root {
-    --primary-color: #3CB371; /* Medium Sea Green - Bright Green */
-    --secondary-color: #66CDAA; /* Medium Aquamarine - Lighter Bright Green for accents */
-    --text-color: #333;
-    --light-text-color: #555;
-    --background-color: #F0F8FF; /* Alice Blue - Soft White/Light Blue */
-    --white-color: #FFFFFF;
+    --primary-green: #4CAF50;    /* A vibrant, standard green */
+    --secondary-green: #81C784;  /* A lighter, softer green */
+    --accent-color: #A5D6A7;     /* Even lighter green for subtle accents */
+    --text-dark: #333333;        /* Dark gray for main text */
+    --text-light: #555555;       /* Lighter gray for secondary text */
+    --white-bg: #F9F9F9;         /* Off-white background */
+    --pure-white: #FFFFFF;       /* Pure white for elements */
 }
 
 body {
@@ -13,9 +14,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--white-bg);
+    color: var(--text-dark);
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
 }
 
 .container {
@@ -26,23 +28,24 @@ body {
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-    color: var(--primary-color);
+    color: var(--primary-green);
     text-align: center;
     margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 3.8em; /* Slightly larger for impact */
+    font-size: 4em; /* Larger and more impactful */
     margin-bottom: 10px;
     letter-spacing: 2px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
 
 h2 {
-    font-size: 2.8em; /* Slightly larger */
-    margin-bottom: 25px;
+    font-size: 3em; /* Larger */
+    margin-bottom: 30px;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    color: var(--primary-green); /* Ensure consistent color */
 }
 
 h2::after {
@@ -51,15 +54,16 @@ h2::after {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 80px; /* Wider underline */
-    height: 4px; /* Thicker underline */
-    background-color: var(--secondary-color);
+    width: 100px; /* Wider and more prominent underline */
+    height: 5px; /* Thicker underline */
+    background-color: var(--secondary-green);
     border-radius: 5px;
 }
 
 h3 {
-    font-size: 2em; /* Slightly larger */
+    font-size: 2.2em;
     margin-bottom: 15px;
+    color: var(--secondary-green); /* Use secondary green for h3 */
 }
 
 p {
@@ -69,54 +73,20 @@ p {
 
 a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--secondary-green);
+    transition: color 0.3s ease;
 }
 
-/* Button Styles - "Buka Undangan" */
-.btn {
-    display: inline-block;
-    /* Beautiful Gradient Background */
-    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-    color: var(--white-color);
-    padding: 15px 30px; /* Slightly larger padding */
-    border-radius: 30px; /* More rounded corners */
-    transition: all 0.4s ease; /* Smoother transition for all properties */
-    margin-top: 30px; /* More space from date */
-    font-weight: 700; /* Bolder text */
-    text-transform: uppercase;
-    letter-spacing: 1.5px; /* More letter spacing */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    border: none; /* Remove default border */
-    cursor: pointer;
+a:hover {
+    color: var(--primary-green);
 }
 
-.btn:hover {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Reverse gradient on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* More prominent shadow on hover */
-    transform: translateY(-3px); /* Slight lift effect */
-}
-
-.btn-small {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 10px 20px; /* Slightly larger */
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 0.95em;
-    font-weight: 600;
-}
-
-.btn-small:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Header/Hero Section */
+/* Hero Section (Awal Undangan) */
 .hero {
-    background: url('https://via.placeholder.com/1500x800/3CB371/FFFFFF?text=Background+Pernikahan+Cerah') no-repeat center center/cover; /* Placeholder image with bright green hint */
-    color: var(--white-color);
+    background: url('https://via.placeholder.com/1500x800/4CAF50/FFFFFF?text=Green+Wedding+Background') no-repeat center center/cover; /* Placeholder green background */
+    color: var(--pure-white);
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px; /* More padding */
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -132,50 +102,91 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3); /* Slightly lighter overlay */
+    background: rgba(0, 0, 0, 0.4); /* Darker overlay for better text contrast */
     z-index: -1;
 }
 
 .hero-content {
     max-width: 700px;
-    animation: fadeIn 2s ease-out;
+    animation: fadeInScale 2s ease-out; /* Enhanced initial animation */
 }
 
 .hero-content p {
-    font-size: 1.3em; /* Slightly larger */
+    font-size: 1.4em;
     margin-bottom: 5px;
-    font-weight: 400;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .hero-content h1 {
-    color: var(--white-color); /* H1 in hero should be white */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    color: var(--pure-white); /* Ensure H1 in hero is white */
 }
 
 .hero-content .date-hero {
-    font-size: 1.6em; /* Slightly larger */
+    font-size: 1.8em;
     font-weight: 700;
-    margin-top: 15px;
-    color: var(--white-color);
+    margin-top: 20px;
+    color: var(--pure-white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* "Buka Undangan" Button with Cartoon Background */
+.btn {
+    display: inline-block;
+    /* Custom cartoon background */
+    background: url('https://via.placeholder.com/300x80/81C784/FFFFFF?text=Wedding+Cartoon+Btn') no-repeat center center/cover; /* Placeholder for cartoon image */
+    color: var(--pure-white); /* Text color on the button */
+    padding: 18px 40px; /* Generous padding */
+    border-radius: 50px; /* Fully rounded, pill shape */
+    transition: all 0.4s ease;
+    margin-top: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    border: 3px solid var(--pure-white); /* White border for emphasis */
+    cursor: pointer;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Text shadow for readability */
 }
 
+.btn:hover {
+    background-size: 110%; /* Slight zoom effect on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px) scale(1.02); /* More pronounced lift and slight scale */
+    border-color: var(--accent-color); /* Border color changes on hover */
+}
 
-/* Sections */
+.btn-small {
+    display: inline-block;
+    background-color: var(--secondary-green);
+    color: var(--pure-white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.95em;
+    font-weight: 600;
+}
+
+.btn-small:hover {
+    background-color: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+/* Sections Styling */
 .section {
-    padding: 70px 20px; /* More padding */
-    background-color: var(--white-color);
-    margin-bottom: 25px; /* More margin */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Stronger shadow */
-    border-radius: 12px; /* More rounded corners */
+    padding: 80px 20px; /* More generous padding */
+    background-color: var(--pure-white);
+    margin: 25px auto; /* Centered with margin */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Stronger shadow */
+    border-radius: 15px; /* More rounded corners */
+    opacity: 0; /* Hidden by default for JS animation */
+    transform: translateY(50px); /* Starts below */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth animation */
 }
 
-.section:last-child {
-    margin-bottom: 0;
+.section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Details Section */
@@ -184,87 +195,88 @@ a {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 40px; /* More margin */
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 
 .details .couple-info div {
     flex: 1;
     min-width: 280px;
-    padding: 20px; /* More padding */
+    padding: 20px;
     text-align: center;
 }
 
 .details .couple-info h3 {
     margin-bottom: 8px;
-    color: var(--secondary-color);
-    font-size: 2.2em; /* Larger */
+    color: var(--primary-green); /* Main green for names */
+    font-size: 2.5em; /* Larger names */
 }
 
 .details .couple-info p {
-    color: var(--light-text-color);
-    font-size: 1.15em; /* Slightly larger */
+    color: var(--text-light);
+    font-size: 1.15em;
 }
 
 .details .and-symbol {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5em; /* Larger */
-    color: var(--primary-color);
-    margin: 0 25px; /* More margin */
+    font-size: 4em; /* Very large '&' */
+    color: var(--secondary-green);
+    margin: 0 30px;
 }
 
 .quote {
     font-style: italic;
-    font-size: 1.2em; /* Larger */
-    color: var(--light-text-color);
-    margin-top: 50px; /* More margin */
-    margin-bottom: 10px;
-    padding: 0 30px; /* More padding */
+    font-size: 1.3em; /* Larger quote */
+    color: var(--text-light);
+    margin-top: 50px;
+    margin-bottom: 15px;
+    padding: 0 40px;
+    line-height: 1.8;
 }
 
 .quote-source {
     font-weight: 600;
-    color: var(--primary-color);
-    font-size: 1em; /* Slightly larger */
+    color: var(--primary-green);
+    font-size: 1.05em;
     margin-bottom: 0;
 }
 
 /* Event Section */
 .event .event-card {
-    background-color: var(--background-color);
-    border: 1px solid #e0e0e0; /* Lighter border */
-    padding: 30px; /* More padding */
+    background-color: var(--white-bg);
+    border: 1px solid var(--accent-color); /* Border with accent green */
+    padding: 30px;
     margin-bottom: 25px;
-    border-radius: 10px; /* More rounded */
-    box-shadow: 0 3px 8px rgba(0,0,0,0.05); /* Subtle shadow */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* More prominent shadow */
     text-align: center;
 }
 
 .event .event-card h3 {
-    color: var(--primary-color);
+    color: var(--primary-green);
     margin-bottom: 12px;
-    font-size: 1.8em; /* Larger */
+    font-size: 2em;
 }
 
 .event .event-date,
 .event .event-time {
-    font-weight: 700; /* Bolder */
-    color: var(--secondary-color);
+    font-weight: 700;
+    color: var(--secondary-green);
     margin-bottom: 8px;
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 .event .event-location {
-    color: var(--light-text-color);
+    color: var(--text-light);
     margin-bottom: 20px;
-    font-size: 1.05em;
+    font-size: 1.1em;
 }
 
 .dresscode {
-    margin-top: 40px; /* More margin */
+    margin-top: 40px;
     font-style: italic;
-    color: var(--light-text-color);
-    font-size: 1.1em; /* Larger */
+    color: var(--text-light);
+    font-size: 1.15em;
     font-weight: 600;
 }
 
@@ -272,54 +284,55 @@ a {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; /* More gap */
+    gap: 25px; /* More gap */
     margin-top: 40px;
 }
 
 .gallery-grid img {
     width: 100%;
-    height: 220px; /* Slightly taller */
+    height: 250px; /* Taller images */
     object-fit: cover;
-    border-radius: 10px; /* More rounded */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Stronger shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px; /* More rounded */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* Stronger shadow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.05); /* More pronounced scale */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transform: scale(1.07); /* More pronounced zoom */
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
 }
 
 /* RSVP Section */
 .rsvp .gift-info {
-    background-color: var(--background-color);
-    border: 1px solid #e0e0e0;
+    background-color: var(--white-bg);
+    border: 1px solid var(--accent-color);
     padding: 30px;
     margin-top: 40px;
     border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     text-align: center;
 }
 
 .rsvp .gift-info h3 {
-    color: var(--primary-color);
+    color: var(--primary-green);
     margin-bottom: 12px;
 }
 
 .rsvp .gift-info p {
-    color: var(--light-text-color);
+    color: var(--text-light);
     margin-bottom: 8px;
     font-size: 1.05em;
 }
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
-    color: var(--white-color);
+    background-color: var(--primary-green);
+    color: var(--pure-white);
     text-align: center;
-    padding: 30px 20px; /* More padding */
+    padding: 35px 20px;
     margin-top: 30px;
-    border-radius: 12px; /* More rounded */
+    border-radius: 15px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1); /* Shadow for footer */
 }
 
 footer p {
@@ -330,11 +343,11 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 3em;
+        font-size: 3.2em;
     }
 
     h2 {
-        font-size: 2.2em;
+        font-size: 2.4em;
     }
 
     .details .couple-info {
@@ -342,12 +355,17 @@ footer p {
     }
 
     .details .and-symbol {
-        margin: 25px 0;
+        margin: 30px 0;
+        font-size: 3.5em;
     }
 
     .btn {
-        padding: 12px 25px;
+        padding: 15px 30px;
         font-size: 0.9em;
+    }
+
+    .section {
+        padding: 60px 15px;
     }
 }
 
@@ -360,8 +378,12 @@ footer p {
         font-size: 2em;
     }
 
+    h3 {
+        font-size: 1.8em;
+    }
+
     .btn {
-        padding: 10px 20px;
+        padding: 12px 25px;
         font-size: 0.85em;
     }
 
@@ -369,7 +391,8 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .section {
-        padding: 50px 15px;
+    .quote {
+        font-size: 1.1em;
+        padding: 0 20px;
     }
 }
