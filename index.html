@@ -1,90 +1,276 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan [Nama Kalian]</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Pernikahan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background: #f9f4f0 url('https://raw.githubusercontent.com/rekcless/invit/refs/heads/main/wedding/bk1.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #8b3a3a;
+      font-size: 22px;
+      height: 100%;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+    }
+
+    .section-wrapper {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      scroll-snap-align: start;
+      padding: 30px 20px;
+      position: relative;
+    }
+
+    .scroll-info {
+      font-size: 15px;
+      opacity: 0.85;
+      position: absolute;
+      bottom: 140px;
+      max-width: 90%;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    h2, p, .mempelai, .overlay p, .overlay .mempelai {
+      opacity: 0;
+      transform: scale(0.85);
+      transition: all 1.8s ease;
+      will-change: transform, opacity;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .animate-visible {
+      opacity: 1 !important;
+      transform: scale(1.05) !important;
+    }
+
+    .mempelai, .overlay .mempelai {
+      font-family: 'Alex Brush', cursive;
+      font-size: 38px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #8b3a3a;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 16px;
+      background: rgba(0,0,0,0.3);
+      color: #e2d6c2;
+      text-align: center;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      text-align: center;
+    }
+
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 90%;
+      padding: 20px;
+    }
+
+    .overlay img {
+      max-width: 200px;
+    }
+
+    .overlay p {
+      font-size: 18px;
+      color: #8b3a3a;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .overlay button {
+      padding: 12px 28px;
+      font-size: 18px;
+      border: none;
+      background: #a77248;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 42px;
+      height: 42px;
+      opacity: 0.7;
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    .kaset-svg {
+      width: 100%;
+      height: 100%;
+      animation: spin 4s linear infinite;
+      transform-origin: center center;
+    }
+
+    .paused .kaset-svg {
+      animation-play-state: paused;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
 
-    <audio id="background-music" loop>
-        <source src="nama_lagu_anda.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+<audio id="background-audio" src="https://github.com/rekcless/invit/raw/refs/heads/main/wb.mp3" preload="auto" loop></audio>
 
-    <div class="container">
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <p class="greeting-text">Undangan Pernikahan</p>
-                <h1>[Nama Mempelai Wanita] & [Nama Mempelai Pria]</h1>
-                <p class="date-text">Minggu, 12 Januari 2026</p>
-                <button id="open-invitation-btn" class="btn">Buka Undangan</button>
-            </div>
-        </section>
+<div id="music-control" class="paused" onclick="toggleMusic()">
+  <svg class="kaset-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" stroke="white" stroke-width="1.5" opacity="0.7"/>
+    <path d="M20 32h4M28 28v8M36 26v12M44 30v4" stroke="white" stroke-width="2"/>
+  </svg>
+</div>
 
-        <div id="main-content" class="main-content hidden">
+<!-- ✅ OVERLAY -->
+<div id="overlay" class="overlay">
+  <div class="overlay-content">
+    <img src="https://raw.githubusercontent.com/rekcless/invit/refs/heads/main/Couple.png" alt="Ilustrasi Pasangan">
+    <div class="mempelai">Wakhid & Nida ❤️</div>
+    <p>Dengan memohon rahmat dan ridho Allah SWT,<br>kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam hari bahagia kami.</p>
+    <button onclick="bukaUndangan()">Buka Undangan</button>
+  </div>
+</div>
 
-            <section id="opening" class="section">
-                <p class="quote">
-                    "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir." <br> (QS. Ar-Rum: 21)
-                </p>
-                <p>Maha Suci Allah SWT yang telah menciptakan manusia berpasang-pasangan.</p>
-                <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan putra-putri kami:</p>
+<!-- ✅ KONTEN UTAMA -->
+<div id="main-content" class="hidden">
+  <section class="section-wrapper" id="salam">
+    <h2>Assalamu’alaikum Warahmatullahi Wabarakatuh</h2>
+    <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i dalam acara pernikahan kami.</p>
+    <div class="scroll-info">Geser ke bawah untuk melihat undangan</div>
+  </section>
 
-                <div class="parents-info">
-                    <p>Putri dari Bpk. [Nama Ayah Wanita] & Ibu [Nama Ibu Wanita]</p>
-                    <h2>[Nama Mempelai Wanita]</h2>
-                    <p>Dengan</p>
-                    <p>Putra dari Bpk. [Nama Ayah Pria] & Ibu [Nama Ibu Pria]</p>
-                    <h2>[Nama Mempelai Pria]</h2>
-                </div>
-                <p>Yang Insya Allah akan dilaksanakan pada:</p>
-            </section>
+  <section class="section-wrapper" id="mempelai">
+    <div class="mempelai">Muwakhid Nur Imamah</div>
+    <p>Putra dari Bapak ... & Ibu ...</p>
+    <div class="mempelai">Afifah Nida Umi Fathiyah</div>
+    <p>Putri dari Bapak ... & Ibu ...</p>
+    <div class="scroll-info">Geser ke bawah untuk melanjutkan</div>
+  </section>
 
-            <section id="event-details" class="section">
-                <h2>Detail Acara</h2>
+  <section class="section-wrapper" id="resepsi">
+    <h2>Resepsi Pernikahan</h2>
+    <p>Jumat, 15 Agustus 2025<br>Pukul 13.00 WIB - Selesai<br>Di kediaman mempelai</p>
+    <p><a href="https://maps.app.goo.gl/3kcezLeQFGHRVkdR9" target="_blank" rel="noopener">Lihat di Google Maps</a></p>
+    <div class="scroll-info">Geser ke bawah untuk ayat Al-Qur'an</div>
+  </section>
 
-                <div class="event-card">
-                    <h3>Resepsi Pernikahan</h3>
-                    <p><span class="icon">🗓️</span> **Hari, Tanggal:** Minggu, 12 Januari 2026</p>
-                    <p><span class="icon">⏰</span> **Waktu:** 11.00 WIB - 15.00 WIB</p>
-                    <p><span class="icon">📍</span> **Lokasi:** [Nama Tempat Resepsi], [Alamat Lengkap Resepsi]</p>
-                    <a href="https://maps.app.goo.gl/contohlinkgooglemapsanda" target="_blank" class="btn small-btn">Lihat Peta</a>
-                </div>
-            </section>
+  <section class="section-wrapper" id="ayat">
+    <p style="font-style: italic; font-size: 20px; margin-bottom: 0;">
+      "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri,
+      agar kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+    </p>
+    <p>(QS. Ar-Rum: 21)</p>
+    <div class="scroll-info">Geser ke bawah untuk countdown</div>
+  </section>
 
-            <section id="countdown" class="section">
-                <h2>Menuju Hari Bahagia</h2>
-                <div class="countdown-timer">
-                    <div class="countdown-item">
-                        <span id="days">00</span>
-                        <p>Hari</p>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="hours">00</span>
-                        <p>Jam</p>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="minutes">00</span>
-                        <p>Menit</p>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="seconds">00</span>
-                        <p>Detik</p>
-                    </div>
-                </div>
-            </section>
+  <section class="section-wrapper" id="countdown">
+    <h2>Menuju Hari Bahagia</h2>
+    <div class="countdown" id="timer">Loading...</div>
+    <div class="scroll-info">Geser ke bawah untuk penutup</div>
+  </section>
 
-            <footer id="footer" class="section">
-                <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
-                <p>Wassalamualaikum Warahmatullahi Wabarakatuh.</p>
-                <p class="signature">Hormat kami,</p>
-                <h3>[Nama Mempelai Wanita] & [Nama Mempelai Pria]</h3>
-                <p class="copyright">© 2025 [Nama Kalian]. All Rights Reserved.</p>
-            </footer>
+  <section class="section-wrapper" id="ucapan">
+    <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+    <p>Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
+  </section>
 
-        </div> </div> <script src="script.js"></script>
+  <footer>
+    Website undangan oleh keluarga besar
+  </footer>
+</div>
+
+<!-- ✅ SCRIPT -->
+<script>
+  const audio = document.getElementById("background-audio");
+  const musicControl = document.getElementById("music-control");
+
+  function toggleMusic() {
+    if (audio.paused) {
+      audio.play();
+      musicControl.classList.remove("paused");
+    } else {
+      audio.pause();
+      musicControl.classList.add("paused");
+    }
+  }
+
+  function bukaUndangan() {
+    document.getElementById('overlay').classList.add('hidden');
+    document.getElementById('main-content').classList.remove('hidden');
+    audio.play().catch(() => {});
+    musicControl.classList.remove("paused");
+    document.getElementById('salam').scrollIntoView({ behavior: 'smooth' });
+    activateObserver();
+  }
+
+  function activateObserver() {
+    const elements = document.querySelectorAll('h2, p, .mempelai, .overlay p, .overlay .mempelai');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-visible');
+        } else {
+          entry.target.classList.remove('animate-visible');
+        }
+      });
+    }, { threshold: 0.3 });
+    elements.forEach(el => observer.observe(el));
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    activateObserver();
+  });
+
+  const targetDate = new Date("2025-08-15T13:00:00+07:00").getTime();
+  const timerEl = document.getElementById("timer");
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    if (distance < 0) {
+      timerEl.innerText = "Acara telah berlangsung.";
+      return;
+    }
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
+    timerEl.innerText = `${d} hari ${h} jam ${m} menit ${s} detik`;
+  }, 1000);
+</script>
+
 </body>
 </html>
