@@ -3,273 +3,423 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Undangan Pernikahan | Wakhid & Nida 💞💕</title>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <title>Undangan Pernikahan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Cormorant Garamond', serif;
-      background: #f9f4f0 url('https://raw.githubusercontent.com/rekcless/invit/refs/heads/main/wedding/bk1.png') no-repeat center center fixed;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://raw.githubusercontent.com/rekcless/invit/refs/heads/main/wedding/bk1.png') center center no-repeat;
       background-size: cover;
-      color: #8b3a3a;
-      font-size: 22px;
-      height: 100%;
-      scroll-snap-type: y mandatory;
-      overflow-y: scroll;
+      background-attachment: fixed;
+      color: #111;
     }
 
-    .section-wrapper {
+    .wrapper {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+    }
+
+    section {
+      position: relative;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
       scroll-snap-align: start;
-      padding: 30px 20px;
-      position: relative;
+      text-align: center;
+      padding: 20px;
     }
 
-    .scroll-info {
-      font-size: 15px;
-      opacity: 0.85;
-      position: absolute;
-      bottom: 140px;
-      max-width: 90%;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    h1, h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      margin: 10px 0;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
     }
 
-    h2, p, .mempelai, .overlay p, .overlay .mempelai {
-      opacity: 0;
-      transform: scale(0.85);
-      transition: all 1.8s ease;
-      will-change: transform, opacity;
+    .ayat {
+      max-width: 600px;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    .nama-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nama {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      font-weight: bold;
+      animation: sparkle 3s infinite;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
     }
 
-    .animate-visible {
-      opacity: 1 !important;
-      transform: scale(1.05) !important;
+    .ortu {
+      font-size: 0.95rem;
+      font-style: italic;
+      margin-top: 5px;
     }
 
-    .mempelai, .overlay .mempelai {
-      font-family: 'Alex Brush', cursive;
-      font-size: 38px;
+    .countdown {
+      font-size: 1.5rem;
       font-weight: bold;
-      margin: 15px 0;
-      color: #8b3a3a;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
 
-    footer {
-      padding: 20px;
-      font-size: 16px;
-      background: rgba(0,0,0,0.3);
-      color: #e2d6c2;
-      text-align: center;
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+    .terimakasih {
+      max-width: 500px;
+      line-height: 1.6;
     }
 
-    .overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: none;
-      text-align: center;
+    iframe {
+      border: 0;
+      width: 90%;
+      height: 300px;
+      border-radius: 12px;
     }
 
-    .overlay-content {
+    .couple-img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .geser {
+      position: absolute;
+      bottom: 80px;
+      font-size: 0.85rem;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
-      max-width: 90%;
+    }
+
+    .geser svg {
+      width: 20px;
+      height: 20px;
+      animation: bounce 1.5s infinite;
+      margin-top: 5px;
+      fill: #fff;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    @keyframes sparkle {
+      0%, 100% { text-shadow: 0 0 5px #fff, 0 0 15px gold; }
+      50% { text-shadow: 0 0 10px #fff, 0 0 20px gold; }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .rotating {
+      animation: spin 3s linear infinite;
+    }
+
+    .overlay-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 9999;
+      background: url('https://raw.githubusercontent.com/rekcless/invit/refs/heads/main/wedding/bk1.png') center center no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center; /* Perbaikan untuk pemusatan horizontal */
+      align-items: center;   /* Perbaikan untuk pemusatan vertikal */
       padding: 20px;
     }
 
-    .overlay img {
-      max-width: 200px;
+    .overlay-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      max-width: 90%;
     }
 
-    .overlay p {
-      font-size: 18px;
-      color: #8b3a3a;
+    .overlay-wrapper h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .overlay-wrapper p {
+      font-size: 1rem;
+      color: #fff;
+      max-width: 400px;
       line-height: 1.6;
-      margin: 0;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
     }
 
-    .overlay button {
-      padding: 12px 28px;
-      font-size: 18px;
-      border: none;
-      background: #a77248;
+    .open-btn {
+      padding: 12px 30px;
+      font-size: 1rem;
+      background-color: #8f5f5f;
       color: white;
+      border: none;
       border-radius: 30px;
       cursor: pointer;
+      font-weight: bold;
     }
 
-    .hidden {
-      display: none;
+    .animate {
+      opacity: 0;
+      transform: scale(0.85);
+      transition: all 1.5s ease;
+    }
+
+    .animate.show {
+      opacity: 1;
+      transform: scale(1);
     }
 
     #music-control {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 42px;
-      height: 42px;
-      opacity: 0.7;
-      cursor: pointer;
       z-index: 9999;
+      cursor: pointer;
     }
 
-    .kaset-svg {
-      width: 100%;
-      height: 100%;
-      animation: spin 4s linear infinite;
-      transform-origin: center center;
-    }
-
-    .paused .kaset-svg {
-      animation-play-state: paused;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    #cassette {
+      width: 50px;
     }
   </style>
 </head>
 <body>
 
-<audio id="background-audio" src="https://github.com/rekcless/invit/raw/refs/heads/main/wb.mp3" preload="auto" loop></audio>
+<audio id="bgm" autoplay loop>
+  <source src="https://github.com/rekcless/invit/raw/refs/heads/main/wb.mp3" type="audio/mpeg">
+</audio>
 
-<div id="music-control" class="paused" onclick="toggleMusic()">
-  <svg class="kaset-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="30" stroke="white" stroke-width="1.5" opacity="0.7"/>
-    <path d="M20 32h4M28 28v8M36 26v12M44 30v4" stroke="white" stroke-width="2"/>
-  </svg>
-</div>
 
-<!-- ✅ OVERLAY -->
-<div id="overlay" class="overlay">
-  <div class="overlay-content">
-    <img src="https://raw.githubusercontent.com/rekcless/invit/refs/heads/main/Couple.png" alt="Ilustrasi Pasangan">
-    <div class="mempelai">Wakhid & Nida </div>
-    <p>Dengan memohon rahmat dan ridho Allah SWT,<br>kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam hari bahagia kami.</p>
-    <button onclick="bukaUndangan()">Buka Undangan</button>
+
+<div class="overlay-wrapper" id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 9999;
+  background: url('https://raw.githubusercontent.com/rekcless/invit/refs/heads/main/wedding/bk1.png') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex; justify-content: center; align-items: center; padding: 20px;
+  background-color: rgba(0,0,0,0.5); /* Tambahan transparansi gelap */">
+
+  <div class="overlay-inner" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; max-width: 90%;">
+    <img src="https://raw.githubusercontent.com/rekcless/invit/refs/heads/main/Couple.png" class="couple-img" alt="Couple" style="width: 110px; border-radius: 100px; box-shadow: 0 0 10px rgba(255,255,255,0.4);">
+
+    <h1 style="font-family: 'Great Vibes', cursive; font-size: 3rem; font-weight: bold; color: #fff;
+      text-shadow: 0 0 8px gold, 0 0 20px rgba(255,215,0,0.4);">
+      Wakhid & Nida
+    </h1>
+
+    <hr style="width: 60%; border: 0; border-top: 1px solid rgba(255,255,255,0.4); margin: 10px 0;">
+
+    <p style="font-size: 1rem; color: #fff; max-width: 400px; line-height: 1.6;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);">
+      Dengan senang hati kami mengundang Anda untuk hadir di hari bahagia kami.
+    </p>
+
+    <button class="open-btn" onclick="openInvitation()" style="
+      padding: 12px 30px;
+      font-size: 1rem;
+      background: linear-gradient(135deg, #8f5f5f, #c19898);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(255,215,0,0.5);
+      transition: all 0.3s ease;">
+      Buka Undangan
+    </button>
   </div>
 </div>
 
-<!-- ✅ KONTEN UTAMA -->
-<div id="main-content" class="hidden">
-  <section class="section-wrapper" id="salam">
-    <h2>Assalamu’alaikum Warahmatullahi Wabarakatuh</h2>
-    <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i dalam acara pernikahan kami.</p>
-    <div class="scroll-info">Geser ke bawah untuk melihat undangan</div>
-  </section>
 
-  <section class="section-wrapper" id="mempelai">
-    <div class="mempelai">Muwakhid Nur Imamah</div>
-    <p>Putra dari Bapak Supanto & Ibu Siti Marfuah</p>
-    <div class="mempelai">Afifah Nida Umi Fathiyah</div>
-    <p>Putri dari Bapak Marimo & Ibu Sri Suparsih</p>
-    <div class="scroll-info">Geser ke bawah untuk melanjutkan</div>
-  </section>
 
-  <section class="section-wrapper" id="resepsi">
-    <h2>Resepsi Pernikahan</h2>
-    <p>Jumat, 15 Agustus 2025<br>Pukul 13.00 WIB - Selesai<br>Di kediaman mempelai</p>
-    <p><a href="https://maps.app.goo.gl/3kcezLeQFGHRVkdR9" target="_blank" rel="noopener">Lihat di Google Maps</a></p>
-    <div class="scroll-info">Geser ke bawah untuk ayat Al-Qur'an</div>
-  </section>
 
-  <section class="section-wrapper" id="ayat">
-    <p style="font-style: italic; font-size: 20px; margin-bottom: 0;">
-      "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri,
-      agar kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
-    </p>
-    <p>(QS. Ar-Rum: 21)</p>
-    <div class="scroll-info">Geser ke bawah untuk countdown</div>
-  </section>
 
-  <section class="section-wrapper" id="countdown">
-    <h2>Menuju Hari Bahagia</h2>
-    <div class="countdown" id="timer">Loading...</div>
-    <div class="scroll-info">Geser ke bawah untuk penutup</div>
-  </section>
-
-  <section class="section-wrapper" id="ucapan">
-    <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
-    <p>Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
-  </section>
-
-  <footer>
-    Website undangan oleh keluarga besar
-  </footer>
+<div id="music-control">
+  <img id="cassette" src="https://cdn-icons-png.flaticon.com/512/3771/3771227.png">
 </div>
 
-<!-- ✅ SCRIPT -->
+<div class="wrapper" id="mainContent" style="display: none;">
+  <section class="animate">
+    <h2>Assalamu’alaikum warahmatullahi wabarakatuh</h2>
+    <p>Dengan memohon rahmat dan ridha Allah SWT, kami bermaksud menyelenggarakan acara pernikahan putra-putri kami. Dengan segala hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu.</p>
+    <div class="geser"><span>Lanjutkan geser ke bawah</span><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+  </section>
+
+  <section class="animate">
+    <h2>QS. Ar-Rum: 21</h2>
+    <p class="ayat">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang..."</p>
+    <div class="geser"><span>Lanjutkan geser ke bawah</span><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+  </section>
+
+  <section class="animate">
+    <img src="https://raw.githubusercontent.com/rekcless/invit/refs/heads/main/Couple.png" alt="Couple" class="couple-img">
+    <div class="nama-wrapper">
+      <div>
+        <div class="nama">Muwakhid Nur Imamah</div>
+        <div class="ortu">Putra dari Bapak Supanto & Ibu Siti Marfuah</div>
+      </div>
+      <div>
+        <div class="nama">Afifah Nida Ummi Fathiyah</div>
+        <div class="ortu">Putri dari Bapak Marimo & Ibu Sri Suparsih</div>
+      </div>
+    </div>
+    <div class="geser"><span>Lanjutkan geser ke bawah</span><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+  </section>
+
+  <section class="animate">
+    <h2>Resepsi Pernikahan</h2>
+    <p>InsyaAllah akan dilaksanakan pada:</p>
+    <p><strong>Hari, Tanggal:</strong> Jumat, 15 Agustus 2025</p>
+    <p><strong>Pukul:</strong> 13.00 WIB - Selesai</p>
+    <p><strong>Tempat:</strong> Kediaman mempelai</p>
+    <div class="geser"><span>Lanjutkan geser ke bawah</span><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+  </section>
+
+  <section class="animate">
+    <h2>Lokasi Acara</h2>
+    <iframe src="https://www.google.com/maps?q=-7.8017016,110.7741420&hl=id&output=embed" allowfullscreen loading="lazy"></iframe>
+    <div class="geser"><span>Lanjutkan geser ke bawah</span><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+  </section>
+
+  <section class="animate">
+    <h2>Hitung Mundur</h2>
+    <div class="countdown" id="countdown">Menghitung waktu...</div><div class="geser"><span>Lanjutkan geser ke bawah</span><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+  </section>
+
+
+
+<section class="animate">
+  <h2>Kirim Hadiah</h2>
+  <p class="terimakasih">
+    Doa restu Anda adalah hadiah terindah bagi kami. Namun jika ingin mengirimkan tanda kasih, berikut informasi rekening kami:
+  </p>
+
+  <div style="
+    margin: 30px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f9f7f7, #e4dcdc);
+    border-left: 6px solid #8f5f5f;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    max-width: 350px;
+    text-align: left;
+    font-size: 1rem;
+  ">
+    <p><strong style="color: #8f5f5f;">Bank BCA</strong></p>
+    <p>No. Rekening: <strong style="color:#333;">1234567890</strong></p>
+    <p>a.n. <strong style="color:#333;">Muwakhid Nur Imamah</strong></p>
+  </div>
+
+  <p style="font-size: 0.9rem; font-style: italic;">
+    Terima kasih atas perhatian dan tanda kasih yang diberikan. Semoga menjadi keberkahan untuk kita semua.
+  </p>
+
+  <div class="geser">
+    <span>Lanjutkan geser ke bawah</span>
+    <svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg>
+  </div>
+</section>
+
+
+
+
+
+  <section class="animate">
+    <h2>Terima Kasih</h2>
+    <p class="terimakasih">
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
+      <br><br>
+      Atas kehadiran dan doa restunya, kami ucapkan terima kasih yang sebesar-besarnya.
+      <br><br>
+      Wassalamu’alaikum warahmatullahi wabarakatuh.
+    </p>
+  </section>
+</div>
+
 <script>
-  const audio = document.getElementById("background-audio");
-  const musicControl = document.getElementById("music-control");
+  function openInvitation() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
 
-  function toggleMusic() {
-    if (audio.paused) {
-      audio.play();
-      musicControl.classList.remove("paused");
-    } else {
-      audio.pause();
-      musicControl.classList.add("paused");
+    try {
+      const music = document.getElementById("bgm");
+      music.play();
+      document.getElementById("cassette").classList.add("rotating");
+    } catch (err) {
+      console.warn("Autoplay musik gagal:", err);
     }
-  }
 
-  function bukaUndangan() {
-    document.getElementById('overlay').classList.add('hidden');
-    document.getElementById('main-content').classList.remove('hidden');
-    audio.play().catch(() => {});
-    musicControl.classList.remove("paused");
-    document.getElementById('salam').scrollIntoView({ behavior: 'smooth' });
-    activateObserver();
-  }
+    document.querySelector('.wrapper').scrollTo({ top: 0, behavior: 'smooth' });
 
-  function activateObserver() {
-    const elements = document.querySelectorAll('h2, p, .mempelai, .overlay p, .overlay .mempelai');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-visible');
+          entry.target.classList.add("show");
         } else {
-          entry.target.classList.remove('animate-visible');
+          entry.target.classList.remove("show");
         }
       });
-    }, { threshold: 0.3 });
-    elements.forEach(el => observer.observe(el));
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
   }
 
-  window.addEventListener("DOMContentLoaded", () => {
-    activateObserver();
+  const music = document.getElementById('bgm');
+  const cassette = document.getElementById('cassette');
+  let isPlaying = true;
+
+  document.getElementById('music-control').addEventListener('click', () => {
+    if (isPlaying) {
+      music.pause();
+      cassette.classList.remove("rotating");
+    } else {
+      music.play();
+      cassette.classList.add("rotating");
+    }
+    isPlaying = !isPlaying;
   });
 
-  const targetDate = new Date("2025-08-15T13:00:00+07:00").getTime();
-  const timerEl = document.getElementById("timer");
-  setInterval(() => {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-    if (distance < 0) {
-      timerEl.innerText = "Acara telah berlangsung.";
-      return;
-    }
-    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((distance % (1000 * 60)) / 1000);
-    timerEl.innerText = `${d} hari ${h} jam ${m} menit ${s} detik`;
-  }, 1000);
+  // Perbarui targetDate menjadi 15 Agustus 2025, 13:00 WIB
+  const targetDate = new Date("2025-08-15T13:00:00").getTime();
+  const countdownEl = document.getElementById("countdown");
+
+  if (countdownEl) {
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance < 0) {
+        countdownEl.innerHTML = "Acara telah berlangsung";
+      } else {
+        countdownEl.innerHTML = `${d} Hari ${h} Jam ${m} Menit ${s} Detik`;
+      }
+    }, 1000);
+  }
 </script>
 
 </body>
